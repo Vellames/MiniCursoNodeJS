@@ -1,0 +1,27 @@
+extends /master/app
+
+block mainContent
+  section.container
+    header
+      if user
+        h1 Bem vindo #{user.email}
+      else
+        h1 Login
+      hr
+    if !user
+      section
+        form(action='/auth/local', method='POST')
+          div.row
+            div.col-xs-12
+              label(for='email') Email
+              input.form-control#email(type='email', required=true, maxlength=100. name='email')
+          div.row
+            div.col-xs-12
+              label(for='password') Senha
+              input.form-control#password(type='password', required=true, maxlength=100. name='password')
+          div.row
+            div.col-xs-12
+              button.btn.btn-primary(type='submit') Logar
+          div.row
+            div.col-xs-12
+              a(href='/user/form') Ainda não tem um usuário? Se cadastre aqui!!

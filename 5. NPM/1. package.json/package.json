@@ -1,0 +1,13 @@
+{
+  "name": "nome_do_projeto",
+  "version": "1.0.0",
+  "description": "Descrição do meu projeto",
+  "author": {
+    "email": "c.vellames@outlook.com",
+    "name": "Cassiano Vellames"
+  },
+  "keywords": [
+    "nodejs", "inove&acao", "cassiano"
+  ],
+  "license": "ISC"
+}

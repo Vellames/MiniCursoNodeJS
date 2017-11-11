@@ -1,0 +1,33 @@
+extends /master/app
+
+block mainContent
+  section.container-fluid
+    header
+      h1 Movimentações
+      hr
+    section
+      header
+        a(href='/movement/form').btn.btn-primary Nova Movimentação
+      section
+        table.table.table-bordered
+          thead
+            tr
+              td Ações
+              td Tipo
+              td Descrição
+              td Categoria
+              td Valor
+              td Data
+          tbody
+            each movement in params.movements
+              tr
+                td
+                  a(href='/movement/form/' + movement.id).btn.btn-default
+                    span.glyphicon.glyphicon-pencil
+                  a(href='/movement/delete/' + movement.id).btn.btn-danger.delete-record
+                    span.glyphicon.glyphicon-trash
+                td #{movement.type == 'I' ? 'Receita' : 'Despesa'}
+                td #{movement.description}
+                td #{movement.Category.name}
+                td #{formatMoney(movement.value)}
+                td #{formatDate(movement.date)}

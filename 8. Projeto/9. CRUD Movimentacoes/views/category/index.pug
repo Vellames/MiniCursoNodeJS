@@ -1,0 +1,25 @@
+extends /master/app
+
+block mainContent
+  section.container-fluid
+    header
+      h1 Categorias
+      hr
+    section
+      header
+        a(href='/category/form').btn.btn-primary Nova Categoria
+      section
+        table.table.table-bordered
+          thead
+            tr
+              td Ações
+              td Nome
+          tbody
+            each category in params.categories
+              tr
+                td
+                  a(href='/category/form/' + category.id).btn.btn-default
+                    span.glyphicon.glyphicon-pencil
+                  a(href='/category/delete/' + category.id).btn.btn-danger.delete-record
+                    span.glyphicon.glyphicon-trash
+                td #{category.name}

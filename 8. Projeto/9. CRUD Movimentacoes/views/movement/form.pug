@@ -1,0 +1,54 @@
+extends /master/app
+
+block mainContent
+  section.container
+    form(
+      action=params.mode == 'add' ? '/movement/add' : '/movement/edit/' + params.movement.id,
+      method='POST'
+    )
+      div.row
+        div.col-xs-12.col-sm-4
+          label(for='type') Tipo
+          select.form-control#type(required=true, name='movement[type]')
+            option(value='') Selecione
+            option(value='I' selected=params.mode == 'edit' && params.movement.type == 'I') Receita
+            option(value='E' selected=params.mode == 'edit' && params.movement.type == 'E') Despesa
+        div.col-xs-12.col-sm-8
+          label(for='description') Descrição
+          input.form-control#description(
+            type='text',
+            required=true,
+            maxlength=100,name='movement[description]',
+            value=params.mode == 'edit' ? params.movement.description : ''
+          )
+      div.row
+        div.col-xs-12.col-sm-4
+          label(for='category') Categoria
+          select.form-control#category(required=true, name='movement[category_id]')
+            option(value='') Selecione
+            each category in params.categories
+              option(
+                value=category.id,
+                selected=params.mode == 'edit' && params.movement.category_id == category.id
+              ) #{category.name}
+        div.col-xs-12.col-sm-4
+          label(for='value') Valor
+          input.form-control.currency#value(
+            type='text',
+            required=true,
+            maxlength=15,
+            name='movement[value]',
+            value=params.mode == 'edit' ? params.movement.value : ''
+          )
+        div.col-xs-12.col-sm-4
+          label(for='date') Data
+          input.form-control.datepicker#date(
+            type='text',
+            required=true,
+            name='movement[date]'
+            value=params.mode == 'edit' ? formatDate(params.movement.date) : ''
+          )
+      div.row
+        div.col-xs-12
+          button.btn.btn-primary(type='submit') Salvar
+          a.btn.btn-warning(href='/movement') Cancelar

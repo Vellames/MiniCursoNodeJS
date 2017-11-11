@@ -1,0 +1,24 @@
+{
+  "name": "nome_do_projeto",
+  "version": "1.0.0",
+  "description": "Descrição do meu projeto",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": {
+    "email": "c.vellames@outlook.com",
+    "name": "Cassiano Vellames"
+  },
+  "keywords": [
+    "nodejs",
+    "inove&acao",
+    "cassiano"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "ip": "^1.1.5"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}

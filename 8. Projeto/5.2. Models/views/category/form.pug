@@ -1,0 +1,13 @@
+extends /master/app
+
+block mainContent
+  section.container
+    form(action='', mehotd='POST')
+      div.row
+        div.col-xs-12
+          label(for='name') Nome
+          input.form-control#name(type='text', required=true, maxlength=45. name='category[name]')
+      div.row
+        div.col-xs-12
+          button.btn.btn-primary(type='submit') Salvar
+          a.btn.btn-warning(href='/category') Cancelar

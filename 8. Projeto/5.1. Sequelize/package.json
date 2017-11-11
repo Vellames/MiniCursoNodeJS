@@ -1,0 +1,23 @@
+{
+  "name": "nome_do_projeto",
+  "version": "1.0.0",
+  "description": "Descrição do meu projeto",
+  "scripts": {
+    "start-linux": "NODE_ENV=dev nodemon app.js"
+  },
+  "author": {
+    "email": "c.vellames@outlook.com",
+    "name": "Cassiano Vellames"
+  },
+  "keywords": [
+    "nodejs",
+    "inove&acao",
+    "cassiano"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.22.4"
+  }
+}

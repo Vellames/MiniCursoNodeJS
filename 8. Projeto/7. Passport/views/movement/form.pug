@@ -1,0 +1,28 @@
+extends /master/app
+
+block mainContent
+  section.container
+    form(action='', mehotd='POST')
+      div.row
+        div.col-xs-12.col-sm-4
+          label(for='type') Tipo
+          select.form-control#type(required=true, name='movement[type_id]')
+            option(value='') Selecione
+        div.col-xs-12.col-sm-8
+          label(for='description') Descrição
+          input.form-control#description(type='text', required=true, maxlength=100. name='movement[description]')
+      div.row
+        div.col-xs-12.col-sm-4
+          label(for='category') Categoria
+          select.form-control#category(required=true, name='movement[category_id]')
+            option(value='') Selecione
+        div.col-xs-12.col-sm-4
+          label(for='value') Valor
+          input.form-control#value(type='text', required=true, maxlength=15. name='movement[value]')
+        div.col-xs-12.col-sm-4
+          label(for='date') Data
+          input.form-control#date(type='text', required=true name='movement[date]')
+      div.row
+        div.col-xs-12
+          button.btn.btn-primary(type='submit') Salvar
+          a.btn.btn-warning(href='/movement') Cancelar

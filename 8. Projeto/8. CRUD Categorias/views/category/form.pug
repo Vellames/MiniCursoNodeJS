@@ -1,0 +1,22 @@
+extends /master/app
+
+block mainContent
+  section.container
+    form(
+      action= params.mode == 'add' ? '/category/add' : '/category/edit/' + params.category.id, 
+      method='POST'
+    )
+      div.row
+        div.col-xs-12
+          label(for='name') Nome
+          input.form-control#name(
+            type='text',
+            required=true,
+            maxlength=45
+            name='category[name]'
+            value=params.mode == 'edit' ? params.category.name : ''
+          )
+      div.row
+        div.col-xs-12
+          button.btn.btn-primary(type='submit') Salvar
+          a.btn.btn-warning(href='/category') Cancelar

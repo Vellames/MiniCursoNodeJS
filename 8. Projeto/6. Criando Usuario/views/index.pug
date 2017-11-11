@@ -1,0 +1,23 @@
+extends /master/app
+
+block mainContent
+  section.container
+    header
+      h1 Login
+      hr
+    section
+      form(action='/', method='POST')
+        div.row
+          div.col-xs-12
+            label(for='email') Email
+            input.form-control#email(type='email', required=true, maxlength=100. name='user[email]')
+        div.row
+          div.col-xs-12
+            label(for='password') Senha
+            input.form-control#password(type='password', required=true, maxlength=100. name='user[password]')
+        div.row
+          div.col-xs-12
+            button.btn.btn-primary(type='submit') Logar
+        div.row
+          div.col-xs-12
+            a(href='/user/form') Ainda não tem um usuário? Se cadastre aqui!!

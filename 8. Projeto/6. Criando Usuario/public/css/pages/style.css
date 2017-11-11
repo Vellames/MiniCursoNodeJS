@@ -1,0 +1,15 @@
+table.table {
+  margin-top: 10px !important;
+}
+
+table.table thead tr td:first-child{
+  width: 150px !important;
+}
+
+table.table tbody tr td:first-child{
+  width: 150px !important;
+}
+
+div.row {
+  margin-bottom: 5px !important;
+}
